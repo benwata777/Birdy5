@@ -29,30 +29,29 @@ const HomePage = () => {
       <div className="relative z-20">
         <Navbar />
       </div>
-      {backgrounds.map((bg, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 transition-opacity duration-700 ${
-            index === currentBackground ? "opacity-100" : "opacity-0"
-          }`}
-          style={{
-            backgroundImage: `url(${bg})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-      ))}
+
+      {/* Background image */}
+      <div
+        className="absolute inset-0 transition-opacity duration-700"
+        style={{
+          backgroundImage: `url(${backgrounds[currentBackground]})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black opacity-50"></div>
 
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
-        <h1 className="mb-30 md:mb-0 text-4xl md:text-5xl font-bold">
-          Welcome to Birdy5
-        </h1>
-        <p className="mb-2 md:mb-4 text-base md:text-lg">
-          Your ultimate golf driving range experience.
+      <div className="relative z-10 flex flex-col items-center justify-center md:justify-center md:mt-50 h-full text-white">
+        <h1 className="text-4xl md:text-5xl font-bold">Welcome to Birdy 5</h1>
+        <p className="text-center mb-2 md:mb-4 text-base md:text-lg">
+          สนามซ้อมกอล์ฟ ขนาด 86 ช่องซ้อม,<br></br>
+          แหล่งรวม Pro Shop, และสถาบันสอนกอล์ฟชื่อดัง<br></br>
+          02-170-7281
         </p>
 
-        {/* Adjust button container with margin-top for mobile */}
+        {/* Navigation buttons */}
         <div className="absolute flex justify-between items-center left-0 right-0 top-1/2 transform -translate-y-1/2 mt-20 md:mt-0">
           <button
             onClick={prevBackground}

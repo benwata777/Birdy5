@@ -18,12 +18,10 @@ const Navbar = () => {
   };
 
   return (
-    // className="bg-[url('/navbg.png')] bg-black bg-opacity-70 bg-cover bg-center px-4" //ภาพไม่ขึ้นตอนdeploy
-
     <AppBar
       position="static"
-      style={{ backgroundColor: "#0f5132" }}
-      className="bg-green-900 px-4"
+      style={{ backgroundColor: "#0f5132", zIndex: 1000 }} // เพิ่ม zIndex ให้สูงกว่า Google Map
+      className="sticky top-0 bg-green-900 px-4"
     >
       <Toolbar>
         <Link href="/" passHref>
