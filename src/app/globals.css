@@ -17,7 +17,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Kanit", sans-serif; /* กำหนดฟอนต์ Kanit */
 }
 
 @layer utilities {

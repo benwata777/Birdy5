@@ -12,8 +12,12 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        sans: ["Kanit", "sans-serif"], // เพิ่มการตั้งค่าฟอนต์ Kanit
+      },
     },
   },
   plugins: [],
 };
+
 export default config;
