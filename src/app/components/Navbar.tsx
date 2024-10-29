@@ -20,7 +20,8 @@ const Navbar = () => {
   return (
     <AppBar
       position="static"
-      className="bg-[url('/navbg.png')] bg-black bg-opacity-70 bg-cover bg-center px-4"
+      // className="bg-[url('/navbg.png')] bg-black bg-opacity-70 bg-cover bg-center px-4" //ภาพไม่ขึ้นตอนdeploy
+      className="bg-green-900 px-4"
     >
       <Toolbar>
         <Link href="/" passHref>
