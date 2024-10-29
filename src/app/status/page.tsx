@@ -76,7 +76,8 @@ const LaneStatus: FC = () => {
   return (
     <div className="flex flex-col items-center justify-start min-h-screen">
       <Navbar />
-      <div className="w-full max-w-lg p-6 bg-white border-2 border-gray-300 rounded-lg shadow-lg text-center mt-4">
+      {/* bg-white border-2 border-gray-300 rounded-lg shadow-lg */}
+      <div className="w-full max-w-lg p-6  text-center mt-4">
         <h1 className="text-2xl font-bold mb-4">สถานะเลน</h1>
 
         <div className="flex items-center justify-between border p-4 rounded-md mb-4">
