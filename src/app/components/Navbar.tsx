@@ -20,20 +20,16 @@ const Navbar = () => {
   return (
     <AppBar
       position="static"
-      className="bg-[url('/navbg.jpg')] bg-cover bg-center px-4  bg-opacity-70"
+      className="bg-[url('/navbg.png')] bg-black bg-opacity-70 bg-cover bg-center px-4"
     >
       <Toolbar>
-        <Link
-          className="bg-white bg-opacity-30 rounded-[8px] px-4 py-2 hover:bg-gray-200"
-          href="/"
-          passHref
-        >
+        <Link href="/" passHref>
           <Image
             src="/logo.png"
-            alt="GolfDrive Logo"
-            width={59}
-            height={25}
-            className="cursor-pointer"
+            alt="Birdy5 Logo"
+            width={80}
+            height={40}
+            className="bg-white bg-opacity-80 rounded-[8px] px-4 py-2 hover:bg-gray-200"
           />
         </Link>
         <div className="flex-grow" />
@@ -48,74 +44,38 @@ const Navbar = () => {
               open={Boolean(anchorEl)}
               onClose={handleMenuClose}
             >
-              <MenuItem
-                onClick={handleMenuClose}
-                className="bg-white bg-opacity-80 rounded-full mb-2"
-              >
-                <Link href="/" passHref>
-                  <span className=" flex justify-center w-full p-2 hover:bg-gray-200 rounded-full">
-                    หน้าหลัก
-                  </span>
-                </Link>
-              </MenuItem>
-              <MenuItem
-                onClick={handleMenuClose}
-                className="bg-white bg-opacity-80 rounded-full mb-2"
-              >
-                <Link href="/status" passHref>
-                  <span className="flex justify-center w-full p-2 hover:bg-gray-200 rounded-full">
-                    สถานะเลน
-                  </span>
-                </Link>
-              </MenuItem>
-              <MenuItem
-                onClick={handleMenuClose}
-                className="bg-white bg-opacity-80 rounded-full mb-2"
-              >
-                <Link href="/shop" passHref>
-                  <span className="flex justify-center w-full p-2 hover:bg-gray-200 rounded-full">
-                    ร้านค้า
-                  </span>
-                </Link>
-              </MenuItem>
-              <MenuItem
-                onClick={handleMenuClose}
-                className="bg-white bg-opacity-80 rounded-full mb-2"
-              >
-                <Link href="/aboutus" passHref>
-                  <span className="flex justify-center w-full p-2 hover:bg-gray-200 rounded-full">
-                    เกี่ยวกับเรา
-                  </span>
-                </Link>
-              </MenuItem>
+              {["/", "/status", "/shop", "/aboutus"].map((path, index) => (
+                <MenuItem
+                  key={index}
+                  onClick={handleMenuClose}
+                  className="bg-white bg-opacity-80 rounded-full mb-2"
+                >
+                  <Link href={path} passHref>
+                    <span className="flex justify-center w-full p-2 hover:bg-gray-200 rounded-full">
+                      {
+                        ["หน้าหลัก", "สถานะเลน", "ร้านค้า", "เกี่ยวกับเรา"][
+                          index
+                        ]
+                      }
+                    </span>
+                  </Link>
+                </MenuItem>
+              ))}
             </Menu>
           </>
         ) : (
           <div className="flex space-x-4">
-            <Link
-              href="/"
-              className="bg-white bg-opacity-30 rounded-[8px] px-4 py-2 hover:bg-gray-200"
-            >
-              หน้าหลัก
-            </Link>
-            <Link
-              href="/status"
-              className="bg-white bg-opacity-30 rounded-[8px] px-4 py-2 hover:bg-gray-200"
-            >
-              สถานะเลน
-            </Link>
-            <Link
-              href="/shop"
-              className="bg-white bg-opacity-30 rounded-[8px] px-4 py-2 hover:bg-gray-200"
-            >
-              ร้านค้า
-            </Link>
-            <Link
-              href="/aboutus"
-              className="bg-white bg-opacity-30 rounded-[8px] px-4 py-2 hover:bg-gray-200"
-            >
-              เกี่ยวกับเรา
-            </Link>
+            {["หน้าหลัก", "สถานะเลน", "ร้านค้า", "เกี่ยวกับเรา"].map(
+              (label, index) => (
+                <Link
+                  key={index}
+                  href={["/", "/status", "/shop", "/aboutus"][index]}
+                  className="bg-white bg-opacity-30 rounded-[8px] px-4 py-2 hover:bg-gray-200"
+                >
+                  {label}
+                </Link>
+              )
+            )}
           </div>
         )}
       </Toolbar>
