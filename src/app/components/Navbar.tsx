@@ -18,9 +18,11 @@ const Navbar = () => {
   };
 
   return (
+    // className="bg-[url('/navbg.png')] bg-black bg-opacity-70 bg-cover bg-center px-4" //ภาพไม่ขึ้นตอนdeploy
+
     <AppBar
       position="static"
-      // className="bg-[url('/navbg.png')] bg-black bg-opacity-70 bg-cover bg-center px-4" //ภาพไม่ขึ้นตอนdeploy
+      style={{ backgroundColor: "#0f5132" }}
       className="bg-green-900 px-4"
     >
       <Toolbar>
